@@ -44,5 +44,113 @@ Advanced Tests
 */
 
 suite('Unit Tests', () => {
+    const translator = new Translator();
 
+    suite('American to British English'), () => {
+        // #1
+        test('Translate "Mangoes are my favorite fruit." to British English', () => {
+            const result = translator.translate("Mangoes are my favorite fruit.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">favourite</span>');
+        });
+
+        // #2
+        test('Translate "I ate yogurt for breakfast." to British English', () => {
+            const result = translator.translate("I ate yogurt for breakfast.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">yoghurt</span>');
+        });
+
+        // #3
+        test('Translate "We had a party at my friend\'s condo." to British English', () => {
+            const result = translator.translate("We had a party at my friend's condo.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">flat</span>');
+        });
+
+        // #4
+        test('Translate "Can you toss this in the trashcan for me?" to British English', () => {
+            const result = translator.translate("Can you toss this in the trashcan for me?", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">bin</span>');
+        });
+
+        // #5
+        test('Translate "The parking lot was full." to British English', () => {
+            const result = translator.translate("The parking lot was full.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">bin</span>');
+        });
+
+        // #6
+        test('Translate "Like a high tech Rube Goldberg machine." to British English', () => {
+            const result = translator.translate("Like a high tech Rube Goldberg machine.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">Heath Robinson device</span>');
+        });
+
+        // #7
+        test('Translate "To play hooky means to skip class or work." to British English', () => {
+            const result = translator.translate("To play hooky means to skip class or work.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">bunk off</span>');
+        });
+
+        // #8
+        test('Translate "No Mr. Bond, I expect you to die." to British English', () => {
+            const result = translator.translate("No Mr. Bond, I expect you to die.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">Mr</span>');
+        });
+
+        // #9
+        test('Translate "Dr. Grosh will see you now." to British English', () => {
+            const result = translator.translate("Dr. Grosh will see you now.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">Dr</span>');
+        });
+
+        // #10
+        test('Translate "Lunch is at 12:15 today." to British English', () => {
+            const result = translator.translate("Lunch is at 12:15 today.", "american-to-british");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">12.15</span>');
+        });
+    }
+
+    suite('British to American English'), () => {
+        // #11
+        test('Translate "We watched the footie match for a while." to British English', () => {
+            const result = translator.translate("We watched the footie match for a while.", "british-to-american");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">soccer</span>');
+        });
+
+        // #12
+        test('Translate "Paracetamol takes up to an hour to work." to British English', () => {
+            const result = translator.translate("Paracetamol takes up to an hour to work.", "british-to-american");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">acetaminophen</span>');
+        });
+
+        // #13
+        test('Translate "First, caramelise the onions." to British English', () => {
+            const result = translator.translate("First, caramelise the onions.", "british-to-american");
+            assert.isObject(result);
+            assert.property(result, 'translation');
+            assert.include(result.translation, '<span class="highlight">caramelize</span>');
+        });
+    }
 });
