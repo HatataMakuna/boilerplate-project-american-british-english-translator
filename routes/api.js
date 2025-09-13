@@ -16,7 +16,7 @@ module.exports = function (app) {
 
       // Check if text is empty
       if (text === '') {
-        return res.status(400).json({ error: 'Required field(s) missing'});
+        return res.status(400).json({ error: 'No text to translate'});
       }
 
       if (locale !== 'american-to-british' && locale !== 'british-to-american') {

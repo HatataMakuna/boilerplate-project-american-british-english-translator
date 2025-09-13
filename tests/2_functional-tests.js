@@ -81,7 +81,7 @@ suite('Functional Tests', () => {
             assert.equal(res.status, 400);
             assert.isObject(res.body);
             assert.property(res.body, 'error');
-            assert.include(res.body.error, 'Required field(s) missing');
+            assert.include(res.body.error, 'No text to translate');
             done();
         });
     });
