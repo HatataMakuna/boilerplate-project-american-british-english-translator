@@ -24,6 +24,7 @@ module.exports = function (app) {
       }
 
       const result = translator.translate(text, locale);
+
       return res.json(result);
     });
 };
